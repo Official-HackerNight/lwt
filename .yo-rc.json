@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.hackernight.lwt",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.7.0",
+    "applicationType": "monolith",
+    "baseName": "lwt",
+    "packageName": "com.hackernight.lwt",
+    "packageFolder": "com/hackernight/lwt",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NmFmYzRlYmZlY2YwOTM5ZGExMDZjZTJlNjMwMjBhN2FiMDNhNGQ3MjFlNzhlODBjNDc0MDhhMTNmZDEwYmEzZTZiMzQyMDBjNmJiNzliYjZiYWQ4NDcxNzkyZDBjZjdjMTg4Nzc4YmU5NGVlODk3Mzk3ZDVmNTVjZWExMTBiOTM=",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "protractor"
+    ],
+    "jhiPrefix": "jhi",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "es"
+    ]
+  }
+}

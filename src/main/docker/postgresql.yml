@@ -1,0 +1,11 @@
+version: '2'
+services:
+    lwt-postgresql:
+        image: postgres:10.4
+        # volumes:
+        #     - ~/volumes/jhipster/lwt/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=lwt
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
