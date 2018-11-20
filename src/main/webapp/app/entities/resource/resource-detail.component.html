@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="resource">
+            <h2><span jhiTranslate="lwtApp.resource.detail.title">Resource</span> {{resource.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="lwtApp.resource.name">Name</span></dt>
+                <dd>
+                    <span>{{resource.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="lwtApp.resource.url">Url</span></dt>
+                <dd>
+                    <span>{{resource.url}}</span>
+                </dd>
+                <dt><span jhiTranslate="lwtApp.resource.description">Description</span></dt>
+                <dd>
+                    <span>{{resource.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="lwtApp.resource.episode">Episode</span></dt>
+                <dd>
+                    <div *ngIf="resource.episode">
+                        <a [routerLink]="['/episode', resource.episode?.id, 'view']">{{resource.episode?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/resource', resource.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

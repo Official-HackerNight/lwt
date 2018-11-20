@@ -1,0 +1,66 @@
+
+
+/**
+ * Episode entity.
+ * @author Steven Kelsey.
+ * @updated November 20th, 2018
+ */
+entity Episode {
+	title String required,
+	description String required,
+    airDate LocalDate required,
+    episodeNumber Integer required,
+    episodeSeason Integer required,
+    thumbnailUrl String,
+    youtubeUrl String,
+    callToAction String,
+    callToActionDueDate LocalDate,
+}
+
+/**
+ *	Episode Resources
+ *  e.g. References made during the 
+ */
+entity Resource {
+	name String required,
+	url String required,
+    description String required
+}
+/**
+ *	Episode Tags
+ *  Allow users to search/query Episodes
+ */
+entity Tag {
+	name String required
+}
+
+enum Language {
+    FRENCH, ENGLISH, SPANISH
+}
+
+
+
+relationship ManyToMany {
+	Episode{tag} to Tag{episode}
+}
+
+
+
+relationship ManyToOne {
+	Resource{episode} to Episode{resource}
+}
+
+
+
+// Set pagination options
+// paginate JobHistory, Employee with infinite-scroll
+// paginate Job with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+// service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

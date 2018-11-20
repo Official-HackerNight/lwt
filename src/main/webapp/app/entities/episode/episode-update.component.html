@@ -1,0 +1,123 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-episode-heading" jhiTranslate="lwtApp.episode.home.createOrEditLabel">Create or edit a Episode</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!episode.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="episode.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lwtApp.episode.title" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                        [(ngModel)]="episode.title" required/>
+                    <div [hidden]="!(editForm.controls.title?.dirty && editForm.controls.title?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.title?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lwtApp.episode.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="episode.description" required/>
+                    <div [hidden]="!(editForm.controls.description?.dirty && editForm.controls.description?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.description?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lwtApp.episode.airDate" for="field_airDate">Air Date</label>
+                    <div class="input-group">
+                        <input id="field_airDate" type="text" class="form-control" name="airDate" ngbDatepicker  #airDateDp="ngbDatepicker" [(ngModel)]="episode.airDate"
+                        required/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="airDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div [hidden]="!(editForm.controls.airDate?.dirty && editForm.controls.airDate?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.airDate?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lwtApp.episode.episodeNumber" for="field_episodeNumber">Episode Number</label>
+                    <input type="number" class="form-control" name="episodeNumber" id="field_episodeNumber"
+                        [(ngModel)]="episode.episodeNumber" required/>
+                    <div [hidden]="!(editForm.controls.episodeNumber?.dirty && editForm.controls.episodeNumber?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.episodeNumber?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.episodeNumber?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lwtApp.episode.episodeSeason" for="field_episodeSeason">Episode Season</label>
+                    <input type="number" class="form-control" name="episodeSeason" id="field_episodeSeason"
+                        [(ngModel)]="episode.episodeSeason" required/>
+                    <div [hidden]="!(editForm.controls.episodeSeason?.dirty && editForm.controls.episodeSeason?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.episodeSeason?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.episodeSeason?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lwtApp.episode.thumbnailUrl" for="field_thumbnailUrl">Thumbnail Url</label>
+                    <input type="text" class="form-control" name="thumbnailUrl" id="field_thumbnailUrl"
+                        [(ngModel)]="episode.thumbnailUrl" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lwtApp.episode.youtubeUrl" for="field_youtubeUrl">Youtube Url</label>
+                    <input type="text" class="form-control" name="youtubeUrl" id="field_youtubeUrl"
+                        [(ngModel)]="episode.youtubeUrl" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lwtApp.episode.callToAction" for="field_callToAction">Call To Action</label>
+                    <input type="text" class="form-control" name="callToAction" id="field_callToAction"
+                        [(ngModel)]="episode.callToAction" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lwtApp.episode.callToActionDueDate" for="field_callToActionDueDate">Call To Action Due Date</label>
+                    <div class="input-group">
+                        <input id="field_callToActionDueDate" type="text" class="form-control" name="callToActionDueDate" ngbDatepicker  #callToActionDueDateDp="ngbDatepicker" [(ngModel)]="episode.callToActionDueDate"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="callToActionDueDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="lwtApp.episode.tag" for="field_tag">Tag</label>
+                    <select class="form-control" id="field_tag" multiple name="tag" [(ngModel)]="episode.tags">
+                        <option [ngValue]="getSelected(episode.tags, tagOption)" *ngFor="let tagOption of tags; trackBy: trackTagById">{{tagOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

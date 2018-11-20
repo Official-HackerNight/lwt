@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="episode">
+            <h2><span jhiTranslate="lwtApp.episode.detail.title">Episode</span> {{episode.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="lwtApp.episode.title">Title</span></dt>
+                <dd>
+                    <span>{{episode.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="lwtApp.episode.description">Description</span></dt>
+                <dd>
+                    <span>{{episode.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="lwtApp.episode.airDate">Air Date</span></dt>
+                <dd>
+                    <span>{{episode.airDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="lwtApp.episode.episodeNumber">Episode Number</span></dt>
+                <dd>
+                    <span>{{episode.episodeNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="lwtApp.episode.episodeSeason">Episode Season</span></dt>
+                <dd>
+                    <span>{{episode.episodeSeason}}</span>
+                </dd>
+                <dt><span jhiTranslate="lwtApp.episode.thumbnailUrl">Thumbnail Url</span></dt>
+                <dd>
+                    <span>{{episode.thumbnailUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="lwtApp.episode.youtubeUrl">Youtube Url</span></dt>
+                <dd>
+                    <span>{{episode.youtubeUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="lwtApp.episode.callToAction">Call To Action</span></dt>
+                <dd>
+                    <span>{{episode.callToAction}}</span>
+                </dd>
+                <dt><span jhiTranslate="lwtApp.episode.callToActionDueDate">Call To Action Due Date</span></dt>
+                <dd>
+                    <span>{{episode.callToActionDueDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="lwtApp.episode.tag">Tag</span></dt>
+                <dd>
+                    <span *ngFor="let tag of episode.tags; let last = last">
+                        <a [routerLink]="['/tag', tag?.id, 'view' ]">{{tag.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/episode', episode.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

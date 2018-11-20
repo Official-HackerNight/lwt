@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Episode.
+    -->
+    <changeSet id="20181120160319-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="episodes_id"
+                                 baseTableName="episode_tag"
+                                 constraintName="fk_episode_tag_episodes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="episode"/>
+        <addForeignKeyConstraint baseColumnNames="tags_id"
+                                 baseTableName="episode_tag"
+                                 constraintName="fk_episode_tag_tags_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tag"/>
+        
+    </changeSet>
+</databaseChangeLog>

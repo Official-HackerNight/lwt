@@ -1,0 +1,31 @@
+{
+    "lwtApp": {
+        "episode": {
+            "home": {
+                "title": "Episodes",
+                "createLabel": "Crear nuevo Episode",
+                "createOrEditLabel": "Crear o editar Episode"
+            },
+            "created": "Un nuevo Episode ha sido creado con el identificador {{ param }}",
+            "updated": "Un Episode ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Episode ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Episode {{ id }}?"
+            },
+            "detail": {
+                "title": "Episode"
+            },
+            "title": "Title",
+            "description": "Description",
+            "airDate": "Air Date",
+            "episodeNumber": "Episode Number",
+            "episodeSeason": "Episode Season",
+            "thumbnailUrl": "Thumbnail Url",
+            "youtubeUrl": "Youtube Url",
+            "callToAction": "Call To Action",
+            "callToActionDueDate": "Call To Action Due Date",
+            "tag": "Tag",
+            "resource": "Resource"
+        }
+    }
+}
