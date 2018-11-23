@@ -36,6 +36,8 @@
     "languages": [
       "en",
       "es"
-    ]
+    ],
+    "herokuAppName": "lwt",
+    "herokuDeployType": "git"
   }
 }
